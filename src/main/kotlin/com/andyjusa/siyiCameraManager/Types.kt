@@ -103,8 +103,8 @@ enum class VideoMode(val i:UByte, val mainVideo: VideoType, val subVideo: VideoT
     EIGHT(8u, VideoType.THERMAL, VideoType.WIDE),
     ERROR(10u, VideoType.WIDE, VideoType.WIDE)
 }
-fun getVideoMode(ii:UByte): VideoMode = (VideoMode.entries.find { it.i==ii }?: VideoMode.ERROR)
-fun getVideoMode(ii: VideoType, iii: VideoType): VideoMode = (VideoMode.entries.find { it.mainVideo==ii&&it.subVideo==iii }?: VideoMode.ERROR)
+fun getVideoMode(ii:UByte): VideoMode = (VideoMode.values().find { it.i==ii }?: VideoMode.ERROR)
+fun getVideoMode(ii: VideoType, iii: VideoType): VideoMode = (VideoMode.values().find { it.mainVideo==ii&&it.subVideo==iii }?: VideoMode.ERROR)
 enum class VideoType{
     WIDE,
     THERMAL,
